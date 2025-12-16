@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import joblib
@@ -7,12 +8,16 @@ st.set_page_config(
     page_title="Earthquake Alert Predictor",
     layout="centered"
 )
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def load_css():
-    with open("static/style.css", encoding="utf-8") as f:
+    css_path = os.path.join(BASE_DIR, "static", "style.css")
+    with open(css_path, encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 def load_html():
-    with open("templates/index.html", encoding="utf-8") as f:
+    html_path = os.path.join(BASE_DIR, "templates", "index.html")
+    with open(html_path, encoding="utf-8") as f:
         st.markdown(f.read(), unsafe_allow_html=True)
 
 
