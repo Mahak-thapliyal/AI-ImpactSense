@@ -26,7 +26,7 @@ load_html()
 
 # ------------------ Load Model ------------------
 try:
-    rf_model = joblib.load(".venv/gradient_boosting_model.pkl")
+    rf_model = joblib.load("gradient_boosting_model.pkl")
 except FileNotFoundError:
     st.error("❌ gradient_boosting_model.pkl file not found! Please place it in the same folder.")
     st.stop()
